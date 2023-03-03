@@ -5,7 +5,7 @@ import { SectionBox } from "../ui/boxes";
 const Main = () => {
   return (
     <>
-      <SectionBox id="#main">
+      <SectionBox id="main">
         <Heading
           size="3xl"
           bgGradient="linear(to-l, blue.300, purple.600)"

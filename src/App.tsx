@@ -1,16 +1,20 @@
-import { ChakraProvider, Grid, theme, VStack } from "@chakra-ui/react";
+import { Box, ChakraProvider, Grid, theme, VStack } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import Main from "./components/Main";
 import NavBar from "./components/NavBar";
+import Proyects from "./components/Proyects";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <Grid minH="100vh" templateColumns="20% 1fr">
       <NavBar></NavBar>
-      <VStack>
-        <ColorModeSwitcher position="absolute" right={10} />
-        <Main></Main>
-      </VStack>
+      <Box overflow={"auto"} h="100vh">
+        <VStack>
+          <ColorModeSwitcher position="absolute" right={10} top={5} />
+          <Main></Main>
+          <Proyects></Proyects>
+        </VStack>
+      </Box>
     </Grid>
   </ChakraProvider>
 );

@@ -9,15 +9,14 @@ const NavBar = () => {
         justifyItems="center"
         bg={"gray.300"}
         w="100%"
-        maxW={"300px"}
         h="100%"
       >
         <VStack alignItems={"flex-start"} fontSize="xl">
-          <Link>
+          <Link href="#main">
             <Icon as={AiFillHome}></Icon>
           </Link>
           <Link>Sobre mi</Link>
-          <Link>Mis proyectos</Link>
+          <Link href="#proyects">Mis proyectos</Link>
           <Link>Skills</Link>
           <Link>Educación</Link>
           <Link>Contacto</Link>
