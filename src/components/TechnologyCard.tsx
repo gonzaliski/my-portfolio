@@ -56,9 +56,9 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
   return (
     <Box
       bg={tech.bg}
-      w="100%"
+      w="auto"
       maxW={"100px"}
-      p={1}
+      p={[1, 1]}
       color={tech.color}
       fontSize="sm"
     >

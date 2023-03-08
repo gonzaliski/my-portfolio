@@ -1,4 +1,11 @@
-import { Grid, Icon, Link, VStack } from "@chakra-ui/react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Grid,
+  Icon,
+  VStack,
+} from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
 
 const NavBar = () => {
@@ -11,16 +18,30 @@ const NavBar = () => {
         w="100%"
         h="100%"
       >
-        <VStack alignItems={"flex-start"} fontSize="xl">
-          <Link href="#main">
-            <Icon as={AiFillHome}></Icon>
-          </Link>
-          <Link>Sobre mi</Link>
-          <Link href="#proyects">Mis proyectos</Link>
-          <Link>Skills</Link>
-          <Link>Educación</Link>
-          <Link>Contacto</Link>
-        </VStack>
+        <Breadcrumb>
+          <VStack alignItems={"flex-start"} fontSize="xl">
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#main">
+                <Icon as={AiFillHome}></Icon>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#aboutme">Sobre mi</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#proyects">Proyectos</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#skills">Skills</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#education">Educación</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#contact">Contacto</BreadcrumbLink>
+            </BreadcrumbItem>
+          </VStack>
+        </Breadcrumb>
       </Grid>
     </>
   );

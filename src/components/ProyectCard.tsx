@@ -26,7 +26,7 @@ const ProyectCard = () => {
         </Stack>
       </CardBody>
       <Divider />
-      <CardFooter gap={2}>
+      <CardFooter gap={2} justifyContent={"center"} flexWrap={"wrap"}>
         <TechnologyCard technology="typescript"></TechnologyCard>
         <TechnologyCard technology="html"></TechnologyCard>
         <TechnologyCard technology="css"></TechnologyCard>

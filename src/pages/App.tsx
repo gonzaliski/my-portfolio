@@ -1,8 +1,9 @@
 import { Box, ChakraProvider, Grid, theme, VStack } from "@chakra-ui/react";
-import { ColorModeSwitcher } from "./ColorModeSwitcher";
-import Main from "./components/Main";
-import NavBar from "./components/NavBar";
-import Proyects from "./components/Proyects";
+import { ColorModeSwitcher } from "../ColorModeSwitcher";
+import AboutMe from "../components/AboutMe";
+import Main from "../components/Main";
+import NavBar from "../components/NavBar";
+import Proyects from "../components/Proyects";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -12,6 +13,7 @@ export const App = () => (
         <VStack>
           <ColorModeSwitcher position="absolute" right={10} top={5} />
           <Main></Main>
+          <AboutMe></AboutMe>
           <Proyects></Proyects>
         </VStack>
       </Box>
