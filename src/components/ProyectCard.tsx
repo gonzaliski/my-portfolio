@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import TechnologyCard from "./TechnologyCard";
+import { PillTechnologyCard } from "./TechnologyCard";
 
 const ProyectCard = () => {
   return (
@@ -27,9 +27,9 @@ const ProyectCard = () => {
       </CardBody>
       <Divider />
       <CardFooter gap={2} justifyContent={"center"} flexWrap={"wrap"}>
-        <TechnologyCard technology="typescript"></TechnologyCard>
-        <TechnologyCard technology="html"></TechnologyCard>
-        <TechnologyCard technology="css"></TechnologyCard>
+        <PillTechnologyCard technology="typescript"></PillTechnologyCard>
+        <PillTechnologyCard technology="html"></PillTechnologyCard>
+        <PillTechnologyCard technology="css"></PillTechnologyCard>
       </CardFooter>
     </Card>
   );

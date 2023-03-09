@@ -20,7 +20,7 @@ const AboutMe = () => {
     <>
       <SectionBox id="aboutme">
         <SectionHeading>Sobre mi</SectionHeading>
-        <HStack justifyContent="space-between" w="90%">
+        <HStack justifyContent="space-between" w="90%" alignItems={"normal"}>
           {aboutMeDataList.map(({ imgUrl, title, description }: any) => (
             <AboutItem
               imgUrl={imgUrl}
@@ -36,15 +36,14 @@ const AboutMe = () => {
 
 const AboutItem = ({ imgUrl, title, description }: AboutItemProps) => {
   return (
-    <VStack w="300px">
-      <Image
-        src={imgUrl}
-        alt="Green double couch with wooden legs"
-        borderRadius="xl"
-        w={150}
-      />
-      <Heading size={"lg"}>{title}</Heading>
-      <Text fontSize="lg">{description}</Text>
+    <VStack w="100%" maxW={"300px"} alignItems="normal">
+      <Image src={imgUrl} w={150} margin={5} />
+      <Heading size={"lg"} textAlign={"center"}>
+        {title}
+      </Heading>
+      <Text fontSize="lg" textAlign={"center"}>
+        {description}
+      </Text>
     </VStack>
   );
 };

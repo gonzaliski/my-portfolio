@@ -4,6 +4,7 @@ import AboutMe from "../components/AboutMe";
 import Main from "../components/Main";
 import NavBar from "../components/NavBar";
 import Proyects from "../components/Proyects";
+import Skills from "../components/Skills";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -15,6 +16,7 @@ export const App = () => (
           <Main></Main>
           <AboutMe></AboutMe>
           <Proyects></Proyects>
+          <Skills></Skills>
         </VStack>
       </Box>
     </Grid>
