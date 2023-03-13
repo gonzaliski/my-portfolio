@@ -1,6 +1,7 @@
 import { Box, ChakraProvider, Grid, theme, VStack } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import AboutMe from "../components/AboutMe";
+import Contact from "../components/Contact";
 import Main from "../components/Main";
 import NavBar from "../components/NavBar";
 import Proyects from "../components/Proyects";
@@ -17,6 +18,7 @@ export const App = () => (
           <AboutMe></AboutMe>
           <Proyects></Proyects>
           <Skills></Skills>
+          <Contact></Contact>
         </VStack>
       </Box>
     </Grid>

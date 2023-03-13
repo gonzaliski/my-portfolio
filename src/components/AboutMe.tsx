@@ -1,6 +1,7 @@
 import { Heading, HStack, Image, VStack, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { getAboutMeItems } from "../api";
+import { AboutItemProps } from "../custom";
 import { SectionBox } from "../ui/boxes";
 import { SectionHeading } from "../ui/text";
 
@@ -36,7 +37,7 @@ const AboutMe = () => {
 
 const AboutItem = ({ imgUrl, title, description }: AboutItemProps) => {
   return (
-    <VStack w="100%" maxW={"300px"} alignItems="normal">
+    <VStack w="100%" maxW={"300px"} alignItems="center">
       <Image src={imgUrl} w={150} margin={5} />
       <Heading size={"lg"} textAlign={"center"}>
         {title}

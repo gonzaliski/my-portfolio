@@ -35,9 +35,6 @@ const NavBar = () => {
               <BreadcrumbLink href="#skills">Skills</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#education">Educación</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
               <BreadcrumbLink href="#contact">Contacto</BreadcrumbLink>
             </BreadcrumbItem>
           </VStack>

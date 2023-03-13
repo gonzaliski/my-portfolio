@@ -21,7 +21,7 @@ const Skills = () => {
         <DarkThinSubtitle>
           Estos son mis conocimientos técnicos
         </DarkThinSubtitle>
-        <HStack wrap={"wrap"} gap={5}>
+        <HStack wrap={"wrap"} gap={5} alignItems={"baseline"}>
           {technologies.map((t) => (
             <TechnologyCard technology={t} />
           ))}

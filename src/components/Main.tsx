@@ -4,6 +4,12 @@ import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 
 const Main = () => {
+  const downloadCv = () => {
+    const link = document.createElement("a");
+    link.download = `GonzaloMendezStefano.pdf`;
+    link.href = "GonzaloMendezStefano.pdf";
+    link.click();
+  };
   return (
     <>
       <SectionBox id="main">
@@ -11,7 +17,7 @@ const Main = () => {
         <DarkThinSubtitle>
           Bienvenidx a mi portfolio de front-end Web Developer
         </DarkThinSubtitle>
-        <Button bgColor={"purple.500"} color="white">
+        <Button onClick={downloadCv} bgColor={"purple.500"} color="white">
           Descargar CV
         </Button>
         <HStack>
