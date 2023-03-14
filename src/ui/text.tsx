@@ -1,4 +1,5 @@
 import { Heading, Text } from "@chakra-ui/react";
+import { ChildrenProps } from "../custom";
 
 export const SectionHeading = ({ children }: ChildrenProps) => {
   return (
@@ -13,6 +14,10 @@ export const SectionHeading = ({ children }: ChildrenProps) => {
   );
 };
 
-export const DarkThinSubtitle = ({ children }: ChildrenProps) => {
-  return <Text fontSize="2xl">{children}</Text>;
+export const DarkThinSubtitle = ({ children }: any, { props }: any) => {
+  return (
+    <Text fontSize="2xl" {...props} fontFamily={"monospace"}>
+      {children}
+    </Text>
+  );
 };

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getAboutMeItems } from "../api";
 import { AboutItemProps } from "../custom";
 import { SectionBox } from "../ui/boxes";
-import { SectionHeading } from "../ui/text";
+import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 
 const AboutMe = () => {
   const [aboutMeDataList, setAboutMeDataList] = useState([] as any);
@@ -21,6 +21,9 @@ const AboutMe = () => {
     <>
       <SectionBox id="aboutme">
         <SectionHeading>Sobre mi</SectionHeading>
+        <DarkThinSubtitle>
+          Estos son algunos projectos que he realizado
+        </DarkThinSubtitle>
         <HStack justifyContent="space-between" w="90%" alignItems={"normal"}>
           {aboutMeDataList.map(({ imgUrl, title, description }: any) => (
             <AboutItem

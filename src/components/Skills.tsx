@@ -11,6 +11,8 @@ const technologies = [
   "next.js",
   "styled components",
   "chakra ui",
+  "react hook form",
+  "recoil",
 ];
 
 const Skills = () => {

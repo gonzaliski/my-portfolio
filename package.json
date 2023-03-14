@@ -42,5 +42,8 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/react-typical": "^0.1.0",
+    "react-typical": "^0.1.3"
+  }
 }

@@ -35,3 +35,11 @@ type MyListItemProps = {
   icon: IconType;
   text: string;
 };
+type ProjectCardProps = {
+  imgUrl: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  projectUrl: string;
+  projectRepo: string;
+};
