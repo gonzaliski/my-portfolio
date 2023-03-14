@@ -29,7 +29,7 @@ const NavBar = () => {
               <BreadcrumbLink href="#aboutme">Sobre mi</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#projects">Projectos</BreadcrumbLink>
+              <BreadcrumbLink href="#projects">Proyectos</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
               <BreadcrumbLink href="#skills">Skills</BreadcrumbLink>

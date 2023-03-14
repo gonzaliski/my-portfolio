@@ -20,7 +20,7 @@ const Projects = () => {
   return (
     <>
       <SectionBox id="projects">
-        <SectionHeading>Projectos</SectionHeading>
+        <SectionHeading>Proyectos</SectionHeading>
         <DarkThinSubtitle>
           Estos son algunos projectos que he realizado
         </DarkThinSubtitle>

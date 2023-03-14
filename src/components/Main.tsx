@@ -1,4 +1,4 @@
-import { Button, HStack, Icon, Link } from "@chakra-ui/react";
+import { Button, HStack, Icon, Link, Image } from "@chakra-ui/react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
@@ -14,6 +14,7 @@ const Main = () => {
   return (
     <>
       <SectionBox id="main">
+        <Image src="profile.png" boxSize="300px" objectFit="contain"></Image>
         <SectionHeading>Gonzalo Gabriel Mendez Stefano</SectionHeading>
         <DarkThinSubtitle>
           Hola!, soy un{" "}
