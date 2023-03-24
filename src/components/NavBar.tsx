@@ -1,15 +1,49 @@
 import {
+  Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   Grid,
   Icon,
+  IconButton,
+  LinkOverlay,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   VStack,
 } from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { BsFillPersonFill } from "react-icons/bs";
 
-const NavBar = () => {
-  return (
+const NavBar = ({ shouldBeHamburger }: NavBarProps) => {
+  console.log("shouldBeHamburger", shouldBeHamburger);
+
+  return shouldBeHamburger ? (
+    <Box bg={"gray.300"}>
+      <Menu>
+        <MenuButton
+          as={IconButton}
+          aria-label="Options"
+          icon={<Icon as={GiHamburgerMenu} boxSize={"90%"} />}
+          variant={"ghost"}
+          size="lg"
+          w={"min-content"}
+        />
+        <MenuList>
+          <LinkOverlay href="#main">
+            <MenuItem icon={<Icon as={BsFillPersonFill} />}>Sobre mi</MenuItem>
+          </LinkOverlay>
+          <LinkOverlay href="#projects">
+            <MenuItem icon={<Icon as={BsFillPersonFill} />}>Proyectos</MenuItem>
+          </LinkOverlay>
+          <MenuItem icon={<Icon as={BsFillPersonFill} />}>Skills</MenuItem>
+          <MenuItem icon={<Icon as={BsFillPersonFill} />}>Contacto</MenuItem>
+        </MenuList>
+      </Menu>
+    </Box>
+  ) : (
     <>
       <Grid
         alignContent="center"

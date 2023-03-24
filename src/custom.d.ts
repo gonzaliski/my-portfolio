@@ -1,5 +1,3 @@
-import { IconType } from "react-icons/lib";
-
 type SectionBoxProps = {
   children: React.ReactNode;
   id: string;
@@ -12,13 +10,8 @@ type TechnologyCardProps = {
 type TechnologyData = {
   bg: string;
   color: string;
-  icon: IconType;
+  icon: import("react-icons/lib").IconType;
 };
-
-type ChildrenProps = {
-  children: string | JSX.Element | JSX.Element[];
-};
-
 type AboutItemProps = {
   imgUrl: string;
   title: string;
@@ -32,7 +25,7 @@ type EducationItemProps = {
 };
 
 type MyListItemProps = {
-  icon: IconType;
+  icon: import("react-icons/lib").IconType;
   text: string;
 };
 type ProjectCardProps = {
@@ -42,4 +35,8 @@ type ProjectCardProps = {
   technologies: string[];
   projectUrl: string;
   projectRepo: string;
+};
+
+type NavBarProps = {
+  shouldBeHamburger: boolean;
 };

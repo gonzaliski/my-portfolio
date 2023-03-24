@@ -1,17 +1,12 @@
 import { HStack, Icon, Text, VStack } from "@chakra-ui/react";
-import { AiFillMail, AiFillPhone } from "react-icons/ai";
-import { MyListItemProps } from "../custom";
-import { SectionBox } from "../ui/boxes";
+import { AiFillMail } from "react-icons/ai";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
+import SectionBox from "./SectionBox";
 
 const contactItems = [
   {
     icon: AiFillMail,
     text: "gonzalomendezst01@gmail.com",
-  },
-  {
-    icon: AiFillPhone,
-    text: "+54 11 32708118",
   },
 ];
 
@@ -22,8 +17,8 @@ const Contact = () => {
         <SectionHeading>Contacto</SectionHeading>
         <DarkThinSubtitle>Ponéte en contacto conmigo</DarkThinSubtitle>
         <VStack alignItems={"flex-start"}>
-          {contactItems.map((it) => (
-            <MyListItem icon={it.icon} text={it.text} />
+          {contactItems.map((it, idx: number) => (
+            <MyListItem icon={it.icon} text={it.text} key={idx} />
           ))}
         </VStack>
       </SectionBox>

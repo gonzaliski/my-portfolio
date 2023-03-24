@@ -1,6 +1,7 @@
 import { HStack } from "@chakra-ui/react";
-import { SectionBox } from "../ui/boxes";
+import { useCustomMediaQuery } from "../hooks";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
+import SectionBox from "./SectionBox";
 import { TechnologyCard } from "./TechnologyCard";
 const technologies = [
   "javascript",
@@ -16,16 +17,23 @@ const technologies = [
 ];
 
 const Skills = () => {
+  const isSmallerThan768px = useCustomMediaQuery();
+
   return (
     <>
       <SectionBox id="skills">
         <SectionHeading>Skills</SectionHeading>
-        <DarkThinSubtitle>
+        <DarkThinSubtitle textAlign={"center"} width={"80 %"}>
           Estos son mis conocimientos técnicos
         </DarkThinSubtitle>
-        <HStack wrap={"wrap"} gap={5} alignItems={"baseline"}>
-          {technologies.map((t) => (
-            <TechnologyCard technology={t} />
+        <HStack
+          wrap={"wrap"}
+          gap={5}
+          alignItems={"baseline"}
+          padding={isSmallerThan768px ? "0 20px" : "none"}
+        >
+          {technologies.map((t, idx: number) => (
+            <TechnologyCard technology={t} key={idx} />
           ))}
         </HStack>
       </SectionBox>

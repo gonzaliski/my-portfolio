@@ -1,16 +1,14 @@
 import { Heading, HStack, Image, VStack, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { getAboutMeItems } from "../api";
-import { AboutItemProps } from "../custom";
-import { SectionBox } from "../ui/boxes";
+import { useCustomMediaQuery } from "../hooks";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
+import SectionBox from "./SectionBox";
 
 const AboutMe = () => {
   const [aboutMeDataList, setAboutMeDataList] = useState([] as any);
   async function getAboutMeData() {
     const res = await getAboutMeItems();
-    console.log(res);
-
     setAboutMeDataList(res);
   }
 
@@ -21,20 +19,34 @@ const AboutMe = () => {
     <>
       <SectionBox id="aboutme">
         <SectionHeading>Sobre mi</SectionHeading>
-        <DarkThinSubtitle>
+        <DarkThinSubtitle textAlign={"center"} width={"80 %"}>
           Estos son algunos projectos que he realizado
         </DarkThinSubtitle>
-        <HStack justifyContent="space-between" w="90%" alignItems={"normal"}>
-          {aboutMeDataList.map(({ imgUrl, title, description }: any) => (
-            <AboutItem
-              imgUrl={imgUrl}
-              title={title}
-              description={description}
-            />
-          ))}
-        </HStack>
+        <AboutItemContainer>
+          {aboutMeDataList.map(
+            ({ imgUrl, title, description }: any, idx: number) => (
+              <AboutItem
+                imgUrl={imgUrl}
+                title={title}
+                description={description}
+                key={idx}
+              />
+            )
+          )}
+        </AboutItemContainer>
       </SectionBox>
     </>
+  );
+};
+
+const AboutItemContainer = ({ children }: { children: React.ReactNode }) => {
+  const isSmallerThan768px = useCustomMediaQuery();
+  return isSmallerThan768px ? (
+    <VStack gap={"40px"}>{children}</VStack>
+  ) : (
+    <HStack justifyContent="space-between" w="90%" alignItems={"normal"}>
+      {children}
+    </HStack>
   );
 };
 
