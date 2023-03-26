@@ -1,9 +1,9 @@
-import { Heading, HStack, Image, VStack, Text } from "@chakra-ui/react";
+import { Flex, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { getAboutMeItems } from "../api";
 import { useCustomMediaQuery } from "../hooks";
-import { DarkThinSubtitle, SectionHeading } from "../ui/text";
-import SectionBox from "./SectionBox";
+import { SectionBox } from "../ui/boxes";
+import { SectionHeading } from "../ui/text";
 
 const AboutMe = () => {
   const [aboutMeDataList, setAboutMeDataList] = useState([] as any);
@@ -19,10 +19,14 @@ const AboutMe = () => {
     <>
       <SectionBox id="aboutme">
         <SectionHeading>Sobre mi</SectionHeading>
-        <DarkThinSubtitle textAlign={"center"} width={"80 %"}>
-          Estos son algunos projectos que he realizado
-        </DarkThinSubtitle>
-        <AboutItemContainer>
+        <Flex
+          w={"90%"}
+          gap={["40px", "40px", "none", "none"]}
+          flexDir={["column", "column", "row", "row"]}
+          flexWrap={"wrap"}
+          alignItems={"normal"}
+          justifyContent={["center", "center", "center", "space-between"]}
+        >
           {aboutMeDataList.map(
             ({ imgUrl, title, description }: any, idx: number) => (
               <AboutItem
@@ -33,20 +37,9 @@ const AboutMe = () => {
               />
             )
           )}
-        </AboutItemContainer>
+        </Flex>
       </SectionBox>
     </>
-  );
-};
-
-const AboutItemContainer = ({ children }: { children: React.ReactNode }) => {
-  const isSmallerThan768px = useCustomMediaQuery();
-  return isSmallerThan768px ? (
-    <VStack gap={"40px"}>{children}</VStack>
-  ) : (
-    <HStack justifyContent="space-between" w="90%" alignItems={"normal"}>
-      {children}
-    </HStack>
   );
 };
 

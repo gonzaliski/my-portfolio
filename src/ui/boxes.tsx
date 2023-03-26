@@ -1,29 +1,14 @@
 import { VStack } from "@chakra-ui/react";
 
-export const SectionBoxDesktop = ({ children, id }: SectionBoxProps) => {
+export const SectionBox = ({ children, id, justify }: SectionBoxProps) => {
   return (
     <VStack
       id={id}
       minH="100vh"
       w="100%"
-      alignItems={"flex-start"}
-      justifyContent={"center"}
-      pl={20}
-      gap={5}
-    >
-      {children}
-    </VStack>
-  );
-};
-
-export const SectionBoxMobile = ({ children, id }: SectionBoxProps) => {
-  return (
-    <VStack
-      id={id}
-      minH="100vh"
-      w="100%"
-      alignItems={"center"}
-      justifyContent={"center"}
+      pl={[0, 0, "60px", "60px"]}
+      alignItems={["center", "flex-start"]}
+      justifyContent={justify ? justify : "center"}
       gap={5}
     >
       {children}

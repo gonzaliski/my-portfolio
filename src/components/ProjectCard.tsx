@@ -20,7 +20,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Card maxW={300}>
-      <CardBody>
+      <CardBody h={"300px"}>
         <Image src={imgUrl} alt="project img" borderRadius="xl" w={300} />
         <Stack mt="6" spacing="3">
           <Heading size="md">{title}</Heading>
@@ -32,7 +32,8 @@ const ProjectCard = ({
         gap={2}
         justifyContent={"center"}
         flexWrap={"wrap"}
-        p={[0, 3]}
+        p={3}
+        h={"100px"}
       >
         {technologies.map((t: any, idx: number) => (
           <PillTechnologyCard technology={t} key={idx}></PillTechnologyCard>

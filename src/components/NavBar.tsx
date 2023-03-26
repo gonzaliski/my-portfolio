@@ -6,6 +6,7 @@ import {
   Grid,
   Icon,
   IconButton,
+  Link,
   LinkOverlay,
   Menu,
   MenuButton,
@@ -17,40 +18,63 @@ import { AiFillHome } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFillPersonFill } from "react-icons/bs";
 
-const NavBar = ({ shouldBeHamburger }: NavBarProps) => {
-  console.log("shouldBeHamburger", shouldBeHamburger);
-
-  return shouldBeHamburger ? (
-    <Box bg={"gray.300"}>
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          aria-label="Options"
-          icon={<Icon as={GiHamburgerMenu} boxSize={"90%"} />}
-          variant={"ghost"}
-          size="lg"
-          w={"min-content"}
-        />
-        <MenuList>
-          <LinkOverlay href="#main">
-            <MenuItem icon={<Icon as={BsFillPersonFill} />}>Sobre mi</MenuItem>
-          </LinkOverlay>
-          <LinkOverlay href="#projects">
-            <MenuItem icon={<Icon as={BsFillPersonFill} />}>Proyectos</MenuItem>
-          </LinkOverlay>
-          <MenuItem icon={<Icon as={BsFillPersonFill} />}>Skills</MenuItem>
-          <MenuItem icon={<Icon as={BsFillPersonFill} />}>Contacto</MenuItem>
-        </MenuList>
-      </Menu>
-    </Box>
-  ) : (
+const NavBar = () => {
+  return (
     <>
+      <Box bg={"gray.300"} display={["flex", "flex", "none", "none"]}>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label="Options"
+            icon={<Icon as={GiHamburgerMenu} boxSize={"90%"} />}
+            variant={"ghost"}
+            size="lg"
+            w={"min-content"}
+          />
+          <MenuList>
+            <LinkOverlay href="#main">
+              <MenuItem
+                icon={<Icon as={BsFillPersonFill} />}
+                closeOnSelect={true}
+              >
+                Info
+              </MenuItem>
+            </LinkOverlay>
+            <MenuItem
+              icon={<Icon as={BsFillPersonFill} />}
+              closeOnSelect={true}
+            >
+              Sobre mi
+            </MenuItem>
+            <MenuItem
+              icon={<Icon as={BsFillPersonFill} />}
+              closeOnSelect={true}
+            >
+              Proyectos
+            </MenuItem>
+            <MenuItem
+              icon={<Icon as={BsFillPersonFill} />}
+              closeOnSelect={true}
+            >
+              Skills
+            </MenuItem>
+            <MenuItem
+              icon={<Icon as={BsFillPersonFill} />}
+              closeOnSelect={true}
+            >
+              Contacto
+            </MenuItem>
+          </MenuList>
+        </Menu>
+      </Box>
+
       <Grid
         alignContent="center"
         justifyItems="center"
         bg={"gray.300"}
         w="100%"
         h="100%"
+        display={["none", "none", "grid", "grid"]}
       >
         <Breadcrumb>
           <VStack alignItems={"flex-start"} fontSize="xl">

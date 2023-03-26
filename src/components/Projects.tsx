@@ -1,10 +1,10 @@
-import { HStack, VStack } from "@chakra-ui/react";
+import { HStack, VStack, Text, Link, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { getProjectsData } from "../api";
 import { useCustomMediaQuery } from "../hooks";
+import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 import ProjectCard from "./ProjectCard";
-import SectionBox from "./SectionBox";
 
 const Projects = () => {
   const [proyectsList, setProyectsList] = useState([] as any);
@@ -23,9 +23,23 @@ const Projects = () => {
       <SectionBox id="projects">
         <SectionHeading>Proyectos</SectionHeading>
         <DarkThinSubtitle textAlign={"center"} width={"80 %"}>
-          Estos son algunos projectos que he realizado
+          Estos son algunos proyectos que he realizado
         </DarkThinSubtitle>
-        <ProjectCardContainer>
+        <Link
+          href="https://apx.school/profile/f5f13b62-42c5-4db8-906b-9b452748b5bc"
+          fontSize="sm"
+        >
+          Ver mas proyectos
+        </Link>
+
+        <Flex
+          w={"90%"}
+          gap={["40px", "40px", "none", "none"]}
+          flexDir={["column", "column", "row", "row"]}
+          flexWrap={"wrap"}
+          alignItems={"normal"}
+          justifyContent={["center", "center", "center", "space-between"]}
+        >
           {proyectsList.map((p: any, idx: number) => (
             <ProjectCard
               imgUrl={p.imgUrl}
@@ -37,20 +51,9 @@ const Projects = () => {
               key={idx}
             />
           ))}
-        </ProjectCardContainer>
+        </Flex>
       </SectionBox>
     </>
-  );
-};
-
-const ProjectCardContainer = ({ children }: { children: React.ReactNode }) => {
-  const isSmallerThan768px = useCustomMediaQuery();
-  return isSmallerThan768px ? (
-    <VStack gap={"40px"}>{children}</VStack>
-  ) : (
-    <HStack justifyContent="space-between" w="90%" alignItems={"normal"}>
-      {children}
-    </HStack>
   );
 };
 

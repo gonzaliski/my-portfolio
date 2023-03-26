@@ -18,6 +18,7 @@ const PillTechnologyCard = ({ technology }: TechnologyCardProps) => {
     <Box
       bg={tech.bg}
       w="auto"
+      maxH={"30px"}
       maxW={"auto"}
       p={[1, 1]}
       color={tech.color}
@@ -38,10 +39,7 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
 
   return (
     <VStack alignItems="center">
-      <Image
-        src={TechnologyCardURLs[technology]}
-        width={isSmallerThan768px ? 50 : 100}
-      />
+      <Image src={TechnologyCardURLs[technology]} width={[50, 70, 100, 100]} />
       <Text fontSize={"sm"} textAlign={"center"} maxW={100}>
         {technology.toUpperCase()}
       </Text>

@@ -1,7 +1,7 @@
 import { HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import { AiFillMail } from "react-icons/ai";
+import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
-import SectionBox from "./SectionBox";
 
 const contactItems = [
   {
@@ -13,7 +13,7 @@ const contactItems = [
 const Contact = () => {
   return (
     <>
-      <SectionBox id="contact">
+      <SectionBox id="contact" justify="flex-start">
         <SectionHeading>Contacto</SectionHeading>
         <DarkThinSubtitle>Ponéte en contacto conmigo</DarkThinSubtitle>
         <VStack alignItems={"flex-start"}>

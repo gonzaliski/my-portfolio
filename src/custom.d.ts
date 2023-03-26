@@ -1,6 +1,16 @@
+type justify =
+  | "center"
+  | "initial"
+  | "space-between"
+  | "space-around"
+  | "space-evenly"
+  | "flex-start"
+  | "flex-end";
+
 type SectionBoxProps = {
   children: React.ReactNode;
   id: string;
+  justify?: justify;
 };
 
 type TechnologyCardProps = {

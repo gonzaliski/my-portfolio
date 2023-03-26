@@ -1,13 +1,10 @@
-import { Button, HStack, Icon, Link, Image } from "@chakra-ui/react";
+import { Button, HStack, Icon, Image, Link } from "@chakra-ui/react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 import Typical from "react-typical";
-import SectionBox from "./SectionBox";
-import { useCustomMediaQuery } from "../hooks";
+import { SectionBox } from "../ui/boxes";
+import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 
 const Main = () => {
-  const isSmallerThan768px = useCustomMediaQuery();
-
   const downloadCv = () => {
     const link = document.createElement("a");
     link.download = `GonzaloMendezStefano.pdf`;
@@ -17,13 +14,20 @@ const Main = () => {
   return (
     <>
       <SectionBox id="main">
-        <Image src="profile.png" boxSize="300px" objectFit="contain"></Image>
-        <SectionHeading textAlign={isSmallerThan768px ? "center" : "initial"}>
+        <Image
+          src="profile.png"
+          boxSize={["200px", "300px", "300px", "300px"]}
+          objectFit="contain"
+        ></Image>
+        <SectionHeading
+          textAlign={["center", "center", "initial", "initial"]}
+          size={["xl", "3xl"]}
+        >
           Gonzalo Gabriel Mendez Stefano
         </SectionHeading>
         <DarkThinSubtitle
-          height={isSmallerThan768px ? "70px" : "initial"}
-          textAlign={isSmallerThan768px ? "center" : "initial"}
+          height={["70px", "initial"]}
+          textAlign={["center", "initial"]}
         >
           Hola!, soy un{" "}
           <Typical

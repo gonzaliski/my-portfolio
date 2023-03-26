@@ -1,7 +1,7 @@
 import { HStack } from "@chakra-ui/react";
 import { useCustomMediaQuery } from "../hooks";
+import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
-import SectionBox from "./SectionBox";
 import { TechnologyCard } from "./TechnologyCard";
 const technologies = [
   "javascript",
