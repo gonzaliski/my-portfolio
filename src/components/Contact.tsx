@@ -1,5 +1,6 @@
 import { HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import { AiFillMail } from "react-icons/ai";
+import { useCustomMediaQuery } from "../hooks";
 import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 
@@ -11,9 +12,14 @@ const contactItems = [
 ];
 
 const Contact = () => {
+  const isSmallerThan768px = useCustomMediaQuery();
+
   return (
     <>
-      <SectionBox id="contact" justify="flex-start">
+      <SectionBox
+        id="contact"
+        justify={isSmallerThan768px ? "flex-start" : null}
+      >
         <SectionHeading>Contacto</SectionHeading>
         <DarkThinSubtitle>Ponéte en contacto conmigo</DarkThinSubtitle>
         <VStack alignItems={"flex-start"}>

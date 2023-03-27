@@ -21,7 +21,10 @@ const Skills = () => {
 
   return (
     <>
-      <SectionBox id="skills">
+      <SectionBox
+        id="skills"
+        justify={isSmallerThan768px ? "flex-start" : null}
+      >
         <SectionHeading>Skills</SectionHeading>
         <DarkThinSubtitle textAlign={"center"} width={"80 %"}>
           Estos son mis conocimientos técnicos
@@ -30,7 +33,8 @@ const Skills = () => {
           wrap={"wrap"}
           gap={5}
           alignItems={"baseline"}
-          padding={isSmallerThan768px ? "0 20px" : "none"}
+          justifyContent={"center"}
+          padding={["0 20px", "none"]}
         >
           {technologies.map((t, idx: number) => (
             <TechnologyCard technology={t} key={idx} />

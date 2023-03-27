@@ -1,6 +1,5 @@
 import { Box, HStack, Icon, Image, Text, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useCustomMediaQuery } from "../hooks";
 import {
   pillTechnologiesData,
   TechnologyCardURLs,
@@ -35,10 +34,8 @@ const PillTechnologyCard = ({ technology }: TechnologyCardProps) => {
 };
 
 const TechnologyCard = ({ technology }: TechnologyCardProps) => {
-  const isSmallerThan768px = useCustomMediaQuery();
-
   return (
-    <VStack alignItems="center">
+    <VStack alignItems="center" width={[70, 70, 100, 100]}>
       <Image src={TechnologyCardURLs[technology]} width={[50, 70, 100, 100]} />
       <Text fontSize={"sm"} textAlign={"center"} maxW={100}>
         {technology.toUpperCase()}

@@ -1,10 +1,12 @@
 import { Button, HStack, Icon, Image, Link } from "@chakra-ui/react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import Typical from "react-typical";
+import { useCustomMediaQuery } from "../hooks";
 import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 
 const Main = () => {
+  const isSmallerThan768px = useCustomMediaQuery();
   const downloadCv = () => {
     const link = document.createElement("a");
     link.download = `GonzaloMendezStefano.pdf`;
@@ -13,7 +15,7 @@ const Main = () => {
   };
   return (
     <>
-      <SectionBox id="main">
+      <SectionBox id="main" justify={isSmallerThan768px ? "center" : undefined}>
         <Image
           src="profile.png"
           boxSize={["200px", "300px", "300px", "300px"]}

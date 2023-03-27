@@ -24,8 +24,8 @@ const AboutMe = () => {
           gap={["40px", "40px", "none", "none"]}
           flexDir={["column", "column", "row", "row"]}
           flexWrap={"wrap"}
-          alignItems={"normal"}
           justifyContent={["center", "center", "center", "space-between"]}
+          alignItems={["center", "center", "center", "normal"]}
         >
           {aboutMeDataList.map(
             ({ imgUrl, title, description }: any, idx: number) => (

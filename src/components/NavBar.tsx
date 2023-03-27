@@ -3,70 +3,99 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Fade,
+  Flex,
   Grid,
   Icon,
-  IconButton,
   Link,
-  LinkOverlay,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
+  useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import { AiFillHome } from "react-icons/ai";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { BsFillPersonFill } from "react-icons/bs";
+import { useState } from "react";
+import { AiFillHome, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const NavBar = () => {
+  const { isOpen, onToggle } = useDisclosure();
+  const [isActive, setIsActive] = useState(false);
+  const menuLinksData = [
+    {
+      link: "main",
+      content: <Icon as={AiFillHome}></Icon>,
+    },
+    {
+      link: "aboutme",
+      content: "Sobre mi",
+    },
+    {
+      link: "projects",
+      content: "Proyectos",
+    },
+    {
+      link: "skills",
+      content: "Skills",
+    },
+    {
+      link: "contact",
+      content: "Contacto",
+    },
+  ];
+
+  const toggleMenu = () => {
+    onToggle();
+    setIsActive(!isActive);
+  };
+
   return (
     <>
-      <Box bg={"gray.300"} display={["flex", "flex", "none", "none"]}>
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            aria-label="Options"
-            icon={<Icon as={GiHamburgerMenu} boxSize={"90%"} />}
-            variant={"ghost"}
-            size="lg"
-            w={"min-content"}
-          />
-          <MenuList>
-            <LinkOverlay href="#main">
-              <MenuItem
-                icon={<Icon as={BsFillPersonFill} />}
-                closeOnSelect={true}
-              >
-                Info
-              </MenuItem>
-            </LinkOverlay>
-            <MenuItem
-              icon={<Icon as={BsFillPersonFill} />}
-              closeOnSelect={true}
-            >
-              Sobre mi
-            </MenuItem>
-            <MenuItem
-              icon={<Icon as={BsFillPersonFill} />}
-              closeOnSelect={true}
-            >
-              Proyectos
-            </MenuItem>
-            <MenuItem
-              icon={<Icon as={BsFillPersonFill} />}
-              closeOnSelect={true}
-            >
-              Skills
-            </MenuItem>
-            <MenuItem
-              icon={<Icon as={BsFillPersonFill} />}
-              closeOnSelect={true}
-            >
-              Contacto
-            </MenuItem>
-          </MenuList>
-        </Menu>
+      <Box
+        bg={"gray.300"}
+        display={["flex", "flex", "none", "none"]}
+        h={10}
+        w={"100%"}
+        position="fixed"
+        zIndex={10}
+      >
+        <Box>
+          {isActive ? (
+            <Icon as={AiOutlineClose} boxSize={10} onClick={toggleMenu} />
+          ) : (
+            <Icon as={AiOutlineMenu} boxSize={10} onClick={toggleMenu} />
+          )}
+        </Box>
       </Box>
+      {isOpen && (
+        <Fade in={isOpen}>
+          <Flex
+            height={"100%"}
+            width={"100%"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            bg={"gray.400"}
+            display={["flex", "flex", "none", "none"]}
+            zIndex={2}
+            position="absolute"
+            left={isOpen ? "initial" : -500}
+            pb="50%"
+          >
+            <Flex
+              flexDir={"column"}
+              alignItems="center"
+              gap={10}
+              fontSize={"lg"}
+              fontFamily={"monospace"}
+              fontWeight={600}
+            >
+              {menuLinksData.map((l) => (
+                <HamburgerMenuLink
+                  content={l.content}
+                  link={l.link}
+                  callback={toggleMenu}
+                />
+              ))}
+            </Flex>
+          </Flex>
+        </Fade>
+      )}
 
       <Grid
         alignContent="center"
@@ -78,27 +107,43 @@ const NavBar = () => {
       >
         <Breadcrumb>
           <VStack alignItems={"flex-start"} fontSize="xl">
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#main">
-                <Icon as={AiFillHome}></Icon>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#aboutme">Sobre mi</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#projects">Proyectos</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#skills">Skills</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#contact">Contacto</BreadcrumbLink>
-            </BreadcrumbItem>
+            {menuLinksData.map((l) => (
+              <MyMenuLink link={l.link} content={l.content}></MyMenuLink>
+            ))}
           </VStack>
         </Breadcrumb>
       </Grid>
     </>
+  );
+};
+
+const MyMenuLink = ({ link, content }: MyMenuLinkProps) => {
+  const smoothScroll = (link: string) => {
+    const element = document.getElementById(link);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+  return (
+    <BreadcrumbItem>
+      <BreadcrumbLink onClick={() => smoothScroll(link)}>
+        {content}
+      </BreadcrumbLink>
+    </BreadcrumbItem>
+  );
+};
+
+const HamburgerMenuLink = ({
+  content,
+  link,
+  callback,
+}: HamburgerMenuLinkProps) => {
+  return (
+    <Link
+      href={"#" + link}
+      onClick={() => callback()}
+      scrollBehavior={"smooth"}
+    >
+      {content}
+    </Link>
   );
 };
 

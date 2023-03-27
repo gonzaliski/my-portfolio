@@ -8,6 +8,8 @@ import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   const [proyectsList, setProyectsList] = useState([] as any);
+  const isSmallerThan768px = useCustomMediaQuery();
+
   async function getProyects() {
     const res = await getProjectsData();
     console.log(res);
@@ -20,7 +22,10 @@ const Projects = () => {
   }, []);
   return (
     <>
-      <SectionBox id="projects">
+      <SectionBox
+        id="projects"
+        justify={isSmallerThan768px ? "flex-start" : null}
+      >
         <SectionHeading>Proyectos</SectionHeading>
         <DarkThinSubtitle textAlign={"center"} width={"80 %"}>
           Estos son algunos proyectos que he realizado
@@ -37,7 +42,7 @@ const Projects = () => {
           gap={["40px", "40px", "none", "none"]}
           flexDir={["column", "column", "row", "row"]}
           flexWrap={"wrap"}
-          alignItems={"normal"}
+          alignItems={["center", "center", "center", "normal"]}
           justifyContent={["center", "center", "center", "space-between"]}
         >
           {proyectsList.map((p: any, idx: number) => (

@@ -12,7 +12,7 @@ export const App = () => {
     <ChakraProvider theme={theme}>
       <Layout>
         <Box overflow={"auto"} h="100vh">
-          <VStack gap={[10, 10, 10, "initial"]}>
+          <VStack gap={[10, 10, 10, 10]}>
             <Main></Main>
             <AboutMe></AboutMe>
             <Projects></Projects>

@@ -5,7 +5,8 @@ type justify =
   | "space-around"
   | "space-evenly"
   | "flex-start"
-  | "flex-end";
+  | "flex-end"
+  | null;
 
 type SectionBoxProps = {
   children: React.ReactNode;
@@ -49,4 +50,14 @@ type ProjectCardProps = {
 
 type NavBarProps = {
   shouldBeHamburger: boolean;
+};
+type HamburgerMenuLinkProps = {
+  content: string | _chakra_ui_system.ComponentWithAs<"svg", IconProps>;
+  link: string;
+  callback: () => void;
+};
+
+type MyMenuLinkProps = {
+  content: string | _chakra_ui_system.ComponentWithAs<"svg", IconProps>;
+  link: string;
 };
