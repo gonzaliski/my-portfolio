@@ -7,13 +7,13 @@ import {
   Flex,
   Grid,
   Icon,
+  Image,
   Link,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { AiFillHome, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-
 const NavBar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [isActive, setIsActive] = useState(false);
@@ -50,8 +50,10 @@ const NavBar = () => {
       <Box
         bg={"gray.300"}
         display={["flex", "flex", "none", "none"]}
-        h={10}
         w={"100%"}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+        p={2}
         position="fixed"
         zIndex={10}
       >
@@ -62,6 +64,7 @@ const NavBar = () => {
             <Icon as={AiOutlineMenu} boxSize={10} onClick={toggleMenu} />
           )}
         </Box>
+        <Image src={"/letter-g.png"} w={10} />
       </Box>
       {isOpen && (
         <Fade in={isOpen}>
@@ -74,7 +77,6 @@ const NavBar = () => {
             display={["flex", "flex", "none", "none"]}
             zIndex={2}
             position="absolute"
-            left={isOpen ? "initial" : -500}
             pb="50%"
           >
             <Flex
@@ -103,6 +105,9 @@ const NavBar = () => {
         bg={"gray.300"}
         w="100%"
         h="100%"
+        fontSize={"lg"}
+        fontFamily={"monospace"}
+        fontWeight={600}
         display={["none", "none", "grid", "grid"]}
       >
         <Breadcrumb>

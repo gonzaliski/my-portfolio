@@ -23,13 +23,13 @@ const Main = () => {
         ></Image>
         <SectionHeading
           textAlign={["center", "center", "initial", "initial"]}
-          size={["xl", "3xl"]}
+          size={["xl", "xl", "3xl", "3xl"]}
         >
           Gonzalo Gabriel Mendez Stefano
         </SectionHeading>
         <DarkThinSubtitle
-          height={["70px", "initial"]}
-          textAlign={["center", "initial"]}
+          height={["70px", "70px", "initial", "initial"]}
+          textAlign={["center", "center", "initial", "initial"]}
         >
           Hola!, soy un{" "}
           <Typical

@@ -7,8 +7,12 @@ import {
   Image,
   Stack,
   Text,
+  Icon,
+  LinkOverlay,
+  HStack,
 } from "@chakra-ui/react";
 import { PillTechnologyCard } from "./TechnologyCard";
+import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
 
 const ProjectCard = ({
   imgUrl,
@@ -23,6 +27,14 @@ const ProjectCard = ({
       <CardBody h={"300px"}>
         <Image src={imgUrl} alt="project img" borderRadius="xl" w={300} />
         <Stack mt="6" spacing="3">
+          <HStack>
+            <LinkOverlay href={projectUrl}>
+              <Icon as={AiOutlineLink} boxSize={6} />
+            </LinkOverlay>
+            <LinkOverlay href={projectRepo}>
+              <Icon as={AiFillGithub} boxSize={6} />
+            </LinkOverlay>
+          </HStack>
           <Heading size="md">{title}</Heading>
           <Text>{description}</Text>
         </Stack>
