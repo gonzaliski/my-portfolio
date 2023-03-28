@@ -142,11 +142,7 @@ const HamburgerMenuLink = ({
   callback,
 }: HamburgerMenuLinkProps) => {
   return (
-    <Link
-      href={"#" + link}
-      onClick={() => callback()}
-      scrollBehavior={"smooth"}
-    >
+    <Link href={"#" + link} onClick={() => callback()}>
       {content}
     </Link>
   );
