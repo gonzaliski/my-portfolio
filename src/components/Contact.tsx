@@ -4,6 +4,7 @@ import { useCustomMediaQuery } from "../hooks";
 import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 import { TechnologyCard } from "./TechnologyCard";
+import { motion } from "framer-motion";
 
 const contactItems = [
   {
@@ -32,7 +33,18 @@ const Contact = () => {
           <DarkThinSubtitle color={"gray"}>
             Esta web está hecha en:
           </DarkThinSubtitle>
-          <HStack alignItems={"baseline"}>
+          <HStack
+            as={motion.div}
+            initial={"hidden"}
+            whileInView={"visible"}
+            transition="0.5s linear"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 100 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            alignItems={"baseline"}
+          >
             {technologiesUsed.map((t) => (
               <TechnologyCard technology={t}></TechnologyCard>
             ))}

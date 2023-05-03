@@ -1,6 +1,6 @@
 import { Button, HStack, Icon, Image, Link } from "@chakra-ui/react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import Typical from "react-typical";
+import { TypeAnimation } from "react-type-animation";
 import { useCustomMediaQuery } from "../hooks";
 import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
@@ -32,15 +32,16 @@ const Main = () => {
           textAlign={["center", "center", "initial", "initial"]}
         >
           Hola!, soy un{" "}
-          <Typical
-            steps={[
-              "Desarrollador Frontend",
-              1000,
-              "Estudiante de Programación",
-              1000,
+          <TypeAnimation
+            sequence={[
+              "Desarrollador Frontend", // Types 'One'
+              1000, // Waits 1s
+              "Estudiante de Programación", // Deletes 'One' and types 'Two'
+              2000, // Waits 2s
             ]}
-            loop={Infinity}
             wrapper="b"
+            cursor={true}
+            repeat={Infinity}
           />
         </DarkThinSubtitle>
         <Button onClick={downloadCv} bgColor={"purple.500"} color="white">

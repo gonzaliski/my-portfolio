@@ -3,17 +3,17 @@ import {
   CardBody,
   CardFooter,
   Divider,
+  HStack,
   Heading,
+  Icon,
   Image,
+  LinkBox,
+  LinkOverlay,
   Stack,
   Text,
-  Icon,
-  LinkOverlay,
-  HStack,
-  LinkBox,
 } from "@chakra-ui/react";
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import { PillTechnologyCard } from "./TechnologyCard";
-import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
 
 const ProjectCard = ({
   imgUrl,

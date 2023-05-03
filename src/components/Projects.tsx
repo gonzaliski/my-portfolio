@@ -5,6 +5,7 @@ import { useCustomMediaQuery } from "../hooks";
 import { SectionBox } from "../ui/boxes";
 import { DarkThinSubtitle, SectionHeading } from "../ui/text";
 import ProjectCard from "./ProjectCard";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [proyectsList, setProyectsList] = useState([] as any);
@@ -39,6 +40,15 @@ const Projects = () => {
 
         <Flex
           w={"90%"}
+          as={motion.div}
+          initial={"hidden"}
+          whileInView={"visible"}
+          transition="0.5s linear"
+          viewport={{ once: true, amount: "some" }}
+          variants={{
+            hidden: { opacity: 0, y: 100 },
+            visible: { opacity: 1, y: 0 },
+          }}
           gap={["40px", "40px", "none", "none"]}
           flexDir={["column", "column", "row", "row"]}
           flexWrap={"wrap"}

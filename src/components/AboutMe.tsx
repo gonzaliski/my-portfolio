@@ -4,6 +4,7 @@ import { getAboutMeItems } from "../api";
 import { useCustomMediaQuery } from "../hooks";
 import { SectionBox } from "../ui/boxes";
 import { SectionHeading } from "../ui/text";
+import { motion } from "framer-motion";
 
 const AboutMe = () => {
   const [aboutMeDataList, setAboutMeDataList] = useState([] as any);
@@ -20,6 +21,15 @@ const AboutMe = () => {
       <SectionBox id="aboutme">
         <SectionHeading>Sobre mi</SectionHeading>
         <Flex
+          as={motion.div}
+          initial={"hidden"}
+          whileInView={"visible"}
+          transition="0.5s linear"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: 100 },
+            visible: { opacity: 1, y: 0 },
+          }}
           w={"90%"}
           gap={["40px", "40px", "none", "none"]}
           flexDir={["column", "column", "row", "row"]}
