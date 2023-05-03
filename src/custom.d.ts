@@ -55,7 +55,6 @@ type HamburgerMenuLinkProps = {
   content: string | _chakra_ui_system.ComponentWithAs<"svg", IconProps>;
   link: string;
   callback: () => void;
-  variants: any;
 };
 
 type MyMenuLinkProps = {
