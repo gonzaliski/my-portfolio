@@ -94,4 +94,6 @@ export const TechnologyCardURLs: {
   ["springboot"]:
     "https://miro.medium.com/v2/resize:fit:550/0*5FEJ7emIEAxZRCQF",
   ["git"]: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+  ["redux toolkit"]:
+    "https://img.uxwing.com/wp-content/themes/uxwing/download/brands-social-media/redux-icon.png",
 };

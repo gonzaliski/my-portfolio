@@ -14,12 +14,13 @@ const technologies = [
   "styled components",
   "chakra ui",
   "react hook form",
+  "redux toolkit",
   "recoil",
   "tailwind",
   "firebase",
   "postgresql",
   "springboot",
-  "git"
+  "git",
 ];
 
 const Skills = () => {
