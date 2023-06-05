@@ -15,6 +15,11 @@ const technologies = [
   "chakra ui",
   "react hook form",
   "recoil",
+  "tailwind",
+  "firebase",
+  "postgresql",
+  "springboot",
+  "git"
 ];
 
 const Skills = () => {
