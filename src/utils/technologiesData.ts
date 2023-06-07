@@ -112,8 +112,8 @@ export const pillTechnologiesData = [
 export const TechnologyCardURLs: {
   [key: string]: string;
 } = {
-  javascript: typescript,
-  typescript: javascript,
+  typescript: typescript,
+  javascript: javascript,
   html: html,
   css: css,
   ["react.js"]: react,
