@@ -50,7 +50,7 @@ const ProjectCard = ({
         justifyContent={"center"}
         flexWrap={"wrap"}
         p={3}
-        h={"100px"}
+        minH={"100px"}
       >
         {technologies.map((t: any, idx: number) => (
           <PillTechnologyCard technology={t} key={idx}></PillTechnologyCard>

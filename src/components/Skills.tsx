@@ -13,7 +13,6 @@ const technologies = [
   "next.js",
   "styled components",
   "chakra ui",
-  "react hook form",
   "redux toolkit",
   "recoil",
   "tailwind",
