@@ -9,8 +9,8 @@ const Main = () => {
   const isSmallerThan768px = useCustomMediaQuery();
   const downloadCv = () => {
     const link = document.createElement("a");
-    link.download = `GonzaloMendezStefano.pdf`;
-    link.href = "GonzaloMendezStefano.pdf";
+    link.download = `Gonzalo Mendez Stefano.pdf`;
+    link.href = "Gonzalo Mendez Stefano.pdf";
     link.click();
   };
   return (
