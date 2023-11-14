@@ -61,8 +61,8 @@ export const pillTechnologiesData = [
   },
   {
     name: "react",
-    bg: "blue.500",
-    color: "white",
+    bg: "#23272f",
+    color: "#149eca",
     icon: SiReact,
   },
   {
