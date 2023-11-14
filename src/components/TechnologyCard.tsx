@@ -16,6 +16,7 @@ const PillTechnologyCard = ({ technology }: TechnologyCardProps) => {
   return (
     <Box
       bg={tech.bg}
+      borderRadius={"md"}
       w="auto"
       maxH={"30px"}
       maxW={"auto"}

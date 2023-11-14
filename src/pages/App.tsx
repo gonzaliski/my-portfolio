@@ -5,7 +5,6 @@ import Layout from "../components/layout/Layout";
 import Main from "../components/Main";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
-import { useCustomMediaQuery } from "../hooks";
 
 export const App = () => {
   return (
