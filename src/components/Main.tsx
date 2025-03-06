@@ -31,12 +31,11 @@ const Main = () => {
           height={["70px", "70px", "initial", "initial"]}
           textAlign={["center", "center", "initial", "initial"]}
         >
-          Hola!, soy un{" "}
           <TypeAnimation
             sequence={[
               "Desarrollador Frontend", // Types 'One'
               1000, // Waits 1s
-              "Estudiante de Programación", // Deletes 'One' and types 'Two'
+              "Técnico en Programación", // Deletes 'One' and types 'Two'
               2000, // Waits 2s
             ]}
             wrapper="b"

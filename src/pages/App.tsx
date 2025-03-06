@@ -5,6 +5,7 @@ import Layout from "../components/layout/Layout";
 import Main from "../components/Main";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
+import Experience from "../components/Experience";
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
           <VStack gap={[10, 10, 10, 10]}>
             <Main></Main>
             <AboutMe></AboutMe>
+            <Experience></Experience>
             <Projects></Projects>
             <Skills></Skills>
             <Contact></Contact>

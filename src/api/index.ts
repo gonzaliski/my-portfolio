@@ -14,7 +14,6 @@ export async function getProjectsData() {
     `https://preview.contentful.com/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/environments/master/entries?access_token=${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`
   );
   const json = await res.json();
-  console.log(json);
 
   const filteredList = transformProjectData(json.includes.Asset, json.items);
   return filteredList;
